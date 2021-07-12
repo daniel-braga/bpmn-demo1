@@ -1,0 +1,35 @@
+version: "3.8"
+services: 
+    db1:
+        image: postgres:12.2
+        container_name: camunda-db
+        ports:
+            - "5432:5432"
+        volumes:
+            - camunda-db:/var/lib/postgresql/data
+        networks: 
+            - bpm-platform
+        environment:
+            - POSTGRES_DB=camunda
+            - POSTGRES_USER=camunda
+            - POSTGRES_PASSWORD=camunda
+    db2:
+        image: postgres:12.2
+        container_name: springboot-db
+        ports:
+            - "5433:5432"
+        volumes:
+            - springboot-db:/var/lib/postgresql/data
+        networks: 
+            - bpm-platform
+        environment:
+            - POSTGRES_DB=springboot
+            - POSTGRES_USER=springboot
+            - POSTGRES_PASSWORD=springboot
+
+networks:
+    bpm-platform:
+
+volumes: 
+    camunda-db:
+    springboot-db:

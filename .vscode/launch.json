@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<bpmn-demo1>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.danielbraga.workflow.Application",
+            "projectName": "bpmn-demo1",
+            "args": ""
+        }
+    ]
+}
